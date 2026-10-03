@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+outputs/*
+!outputs/.gitkeep
+.DS_Store
+
+.ipynb_checkpoints/
+*.log
+Thumbs.db
+.gradio/
