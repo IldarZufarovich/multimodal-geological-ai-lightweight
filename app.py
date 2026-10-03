@@ -1,3 +1,4 @@
+import os
 from __future__ import annotations
 from pathlib import Path
 import html, time, platform
@@ -157,4 +158,4 @@ with gr.Blocks(title=SETTINGS.app_name) as demo:
             mm_demo.click(demo_mm,None,mm_in); mm_run.click(multimodal_pipeline,mm_in,[mm_source,mm_regions,mm_note,mm_text,mm_entities,mm_routes,mm_crop,mm_interp,mm_trace,mm_exec_table,mm_graph])
 
 if __name__=='__main__':
-    demo.queue(default_concurrency_limit=2).launch(theme=theme,css=CSS,server_name='127.0.0.1',server_port=7871,inbrowser=False)
+    demo.queue(default_concurrency_limit=2).launch(theme=theme,css=CSS,server_name='0.0.0.0',server_port=int(os.environ.get('PORT', 7871)),inbrowser=False)
